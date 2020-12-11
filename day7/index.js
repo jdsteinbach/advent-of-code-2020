@@ -1,4 +1,5 @@
 const rules = require('./getRules')
+const flatDeep = require('../utils/flatDeep')
 
 const getValidParents = (children, parents) => {
   children = typeof(children) === 'string'
@@ -44,11 +45,6 @@ const getAllChildren = (parent, children) => {
   })
   return children
 }
-
-function flatDeep(arr, d = 1) {
-  return d > 0 ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val), [])
-  : arr.slice();
-};
 
 const allValidParentsCount = getValidParents('shiny gold bag', []).length
 const allChildrenCount = flatDeep(
