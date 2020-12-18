@@ -4,7 +4,6 @@ const getFinal = (numbers, rounds) => {
   rounds = rounds || 2020
   let last = undefined
   let log = {}
-  console.time('getFinal')
 
   for (let i = 0; i < rounds; i++) {
     if (i < numbers.length) {
@@ -26,19 +25,10 @@ const getFinal = (numbers, rounds) => {
     }
   }
 
-  console.timeEnd('getFinal')
-
   return last
 }
 
 console.log({
-  testa: getFinal([0,3,6], 10),
-  // test1: getFinal([1,3,2]),
-  // test10: getFinal([2,1,3]),
-  // test27: getFinal([1,2,3]),
-  // test78: getFinal([2,3,1]),
-  test438: getFinal([3,2,1]),
-  test1836: getFinal([3,1,2]),
   getFinal: getFinal(input),
   getFinal2: getFinal(input, 30000000)
 })
